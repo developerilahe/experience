@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../experience/reset.css">
+    <link rel="stylesheet" href="../experience/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="content">
+            <div class="container">
+                <div class="contact">
+                    <div class="left-contact">
+                        <h3>We are leading consultant firm!</h3>
+                        <img src="img/united-states-of-america.png" alt="" style="height: 24px;">
+                        <select style="height: 24px; border: none;">
+                            <option>English</option>
+                        </select>
+                    </div>
+                    <div class="right-contact">
+                        <div class="icons">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-brands fa-twitter"></i>
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            <i class="fa-brands fa-pinterest-p"></i>
+                            <i class="fa-brands fa-google-plus-g"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <header class="mainHeader">
+        <div class="container">
+            <div class="headie">
+                <div class="logo">
+                    <h1>LOGO</h1>
+                </div>
+
+                    <div class="menu">
+                        <div class="menu-icon">
+                            <i class="fas fa-bars"></i>
+                        </div>
+    
+                        <!-- Sidebar Menu -->
+                        <div class="sidebar">
+                            <div class="close-icon">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <ul class="menu-list">
+                                <li><a href="">Home</a></li>
+                                <li><a href="">Pages</a></li>
+                                <li><a href="">Solutions</a></li>
+                                <li><a href="">Case Studies</a></li>
+                                <li><a href="">Shop</a></li>
+                                <li><a href="">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="overlay"></div>
+                    </div>
+    
+                    <div class="icons">
+                        <div class="positi">
+                            <span>1</span>
+                            <i class="fa-solid fa-cart-shopping" id="shop"></i>
+                        </div>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            const menuIcon = document.querySelector('.menu-icon');
+            const sidebar = document.querySelector('.sidebar');
+            const closeIcon = document.querySelector('.close-icon');
+            const overlay = document.querySelector('.overlay');
+    
+            // Open menu on icon click
+            menuIcon.addEventListener('click', () => {
+                sidebar.style.left = '0';
+                overlay.style.display = 'block';
+            });
+    
+            // Close menu on X icon or overlay click
+            function closeMenu() {
+                sidebar.style.left = '-100%';
+                overlay.style.display = 'none';
+            }
+    
+            closeIcon.addEventListener('click', closeMenu);
+            overlay.addEventListener('click', closeMenu);
+        </script>
+    </header>
+    
+    <section>
+        <div class="backgroundie">
+            <div class="container">
+                <div class="text">
+                    <div class="about">
+                        <h3>The government they survive article of fortune</h3>
+                        <h1>High-Quality</h1>
+                        <h1>Market Experiences</h1>
+                        <div class="btn" ><a href="https://developerilahe.github.io/E-Commerce/project_1/index.html"><button class="ripple-button">About Us</button></a></div>
+                        <style>
+                            .about {
+                                transform: translateX(-100%);
+                                opacity: 0;
+                                transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+                                color: black;
+                                overflow: hidden;
+                            }
+                    
+                            .about.visible {
+                                transform: translateX(0);
+                                opacity: 1;
+                            }
+                    
+                            .about h1, .about h3 {
+                                color: white;
+                                text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+                            }
+                        </style>
+                 <script>
+                    window.addEventListener('load', () => {
+                        const aboutSection = document.querySelector('.about');
+                        setTimeout(() => {
+                            aboutSection.classList.add('visible');
+                        }, 200);
+                    });
+                </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="quotes">
+            <div class="container">
+                <div class="free">
+                    <div class="provide">
+                        <h2>Provide solutions for the</h2>
+                        <h2>reliable growth</h2>
+                    </div>
+                    <span>|</span>
+                    <p>A tale of fateful trip that started from this tropic port aboard this tiny ship today still
+                        wanted by the government they survive as soldiers of fortune to even wonder the east side to a deluxe
+                        apartment</p>
+                   <a href="https://developerilahe.github.io/E-Commerce/project_1/account.html"><button class="ripple-button">Free Quotes</button></a> 
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            document.querySelectorAll('.ripple-button').forEach(button => {
+                button.addEventListener('click', function (e) {
+                    const ripple = document.createElement('span');
+                    const diameter = Math.max(button.clientWidth, button.clientHeight);
+                    const radius = diameter / 2;
+                    
+                    ripple.style.width = ripple.style.height = `${diameter}px`;
+                    ripple.style.left = `${e.clientX - button.offsetLeft - radius}px`;
+                    ripple.style.top = `${e.clientY - button.offsetTop - radius}px`;
+                    ripple.classList.add('ripple');
+    
+                    const oldRipple = button.getElementsByClassName('ripple')[0];
+                    if (oldRipple) {
+                        oldRipple.remove();
+                    }
+    
+                    button.appendChild(ripple);
+                });
+            });
+        </script>
+    </section>
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+
+</html>
